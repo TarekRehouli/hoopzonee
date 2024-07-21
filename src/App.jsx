@@ -44,9 +44,9 @@ const App = () => {
 
   return (
     <div>
-      <div style={{ position: 'fixed', top: '10px', right: '10px', zIndex: '1000' }}>
-        <button style={{ margin: '0 5px', padding: '5px 10px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '5px' }} onClick={() => handleLanguageChange('en')}>English</button>
-        <button style={{ margin: '0 5px', padding: '5px 10px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '5px' }} onClick={() => handleLanguageChange('fr')}>Français</button>
+      <div style={{ position: 'fixed', top: '10px', right: '10px', zIndex: '1000', display: 'flex', gap: '5px' }}>
+        <button style={{ padding: '5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '5px', fontSize: '12px' }} onClick={() => handleLanguageChange('en')}>English</button>
+        <button style={{ padding: '5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '5px', fontSize: '12px' }} onClick={() => handleLanguageChange('fr')}>Français</button>
       </div>
       <Navbar language={language} />
       <Hero language={language} />
@@ -64,6 +64,10 @@ const App = () => {
       </div>
     </div>
   );
+};
+
+export default App;
+
 };
 
 export default App;
