@@ -31,6 +31,7 @@ const translations = {
 
 const App = () => {
   const [language, setLanguage] = useState('en');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language') || 'en';
@@ -40,6 +41,9 @@ const App = () => {
   const handleLanguageChange = (lang) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
+  };
+  const handleSearch = (query) => {
+    setSearchQuery(query);
   };
 
   return (
