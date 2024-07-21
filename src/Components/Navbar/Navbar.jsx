@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';
-import logo from '../../assets/logo2.png'
 
 const translations = {
   en: {
@@ -22,13 +21,36 @@ const translations = {
 };
 
 const Navbar = ({ language }) => {
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  let navbarClasses = ['navbar'];
+  if (scrolled) {
+    navbarClasses.push('scrolled');
+  }
+
   return (
-    <nav className="navbar">
-      <img src={logo} alt='' className='logo'/>
+    <nav className={navbarClasses.join(' ')}>
+      <a href="#" className="logo">HoopZone</a>
       <ul>
         <li><a href="#programs">{translations[language].programs}</a></li>
         <li><a href="#about">{translations[language].about}</a></li>
-        <li><a href="#courtex">{translations[language].courts}</a></li>
+        <li><a href="#courts">{translations[language].courts}</a></li>
         <li><a href="#gym">{translations[language].gym}</a></li>
         <li><a href="#connect">{translations[language].connect}</a></li>
         <li><a href="#contact">{translations[language].contact}</a></li>
@@ -38,3 +60,4 @@ const Navbar = ({ language }) => {
 }
 
 export default Navbar;
+
