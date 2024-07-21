@@ -4,20 +4,16 @@ import logo from '../../assets/logo2.png'
 
 const translations = {
   en: {
-    programs: 'Programs',
-    about: 'About',
-    courts: 'Courts',
-    gym: 'Gym',
+    about: 'Home',
+    programs: 'Courts',
     connect: 'Connect',
-    contact: 'Contact'
+    contact: 'Book'
   },
   fr: {
-    programs: 'Programmes',
-    about: 'À propos',
-    courts: 'Terrains',
-    gym: 'Salle de sport',
+    about: 'Acceuil',
+    programs: 'Terrains',
     connect: 'Connecter',
-    contact: 'Contact'
+    contact: 'Reserver'
   }
 };
 
@@ -49,12 +45,10 @@ const Navbar = ({ language }) => {
     <nav className={navbarClasses.join(' ')}>
       <img src={logo} alt='' className='logo'/>a>
       <ul>
-        <li><a href="#programs">{translations[language].programs}</a></li>
         <li><a href="#about">{translations[language].about}</a></li>
-        <li><a href="#courts">{translations[language].courts}</a></li>
-        <li><a href="#gym">{translations[language].gym}</a></li>
+        <li><a href="#programs">{translations[language].programs}</a></li>
         <li><a href="#connect">{translations[language].connect}</a></li>
-        <li><a href="#contact">{translations[language].contact}</a></li>
+        <li><button className='btn' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>{translations[language].contact}</button></li>
       </ul>
     </nav>
   );
