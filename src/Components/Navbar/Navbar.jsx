@@ -21,6 +21,7 @@ const translations = {
 
 const Navbar = ({ language }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -29,6 +30,15 @@ const Navbar = ({ language }) => {
     } else {
       setScrolled(false);
     }
+  };
+    const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    // Implement search functionality here
+    console.log('Search query:', searchQuery);
   };
 
   useEffect(() => {
