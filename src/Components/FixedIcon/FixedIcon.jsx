@@ -1,6 +1,6 @@
 // FixedIcon.js
 import React from 'react';
-import court_img from '../../assets/support-icon.png'
+import court_img from '../../assets/support-icon.png';
 import LiveChatModal from './LiveChatModal';
 
 const FixedIcon = () => {
