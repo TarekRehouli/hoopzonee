@@ -55,7 +55,7 @@ const Navbar = ({ language }) => {
 
   return (
     <nav className={navbarClasses.join(' ')}>
-      <img src={logo} alt='' className='logo'/>a>
+      <img src={logo} alt='' className='logo'/>
       <ul>
         <li><a href="#home">{translations[language].about}</a></li>
         <li><a href="#courts">{translations[language].programs}</a></li>
