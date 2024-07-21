@@ -25,6 +25,7 @@ const translations = {
     interiorGym: 'HoopZone Gym - Interior Gym',
     joinTeam: 'Join a team:(optional)',
     selectTeam: 'Select a team',
+    na: "N/A",
     julienLeblanc: 'Julien Leblanc',
     charlesHugot: 'Charles Hugot',
     emmaDupuis: 'Emma Dupuis',
@@ -54,6 +55,7 @@ const translations = {
     interiorGym: 'HoopZone Gym - Gym Intérieur',
     joinTeam: 'Rejoindre une équipe:(optionnel)',
     selectTeam: 'Sélectionnez une équipe',
+    na: "N/A",
     julienLeblanc: 'Julien Leblanc',
     charlesHugot: 'Charles Hugot',
     emmaDupuis: 'Emma Dupuis',
@@ -93,6 +95,7 @@ const Contact = ({ language }) => {
         <span>{translations[language].joinTeam}</span>
         <select name="service" className="box" required>
           <option value="" disabled selected>{translations[language].selectTeam}</option>
+          <option value="genera_dentistry">{translations[language].na}</option>
           <option value="general_dentistry">{translations[language].julienLeblanc}</option>
           <option value="dental-radiography">{translations[language].charlesHugot}</option>
           <option value="implantology">{translations[language].emmaDupuis}</option>
