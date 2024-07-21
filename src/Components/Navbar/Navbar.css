@@ -27,27 +27,4 @@ nav ul li{
     background: red;
     transition: 0.5s;
 }
-.search-form {
-  display: flex;
-  align-items: center;
-}
 
-.search-form input {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 5px;
-}
-
-.search-form button {
-  padding: 5px 10px;
-  border: none;
-  background-color: red;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.search-form button:hover {
-  background-color: darkred;
-}
