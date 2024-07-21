@@ -12,7 +12,7 @@ nav{
     z-index: 10;
 }
 .navbar.scrolled {
-  background-color: #f5f5f5; /* Light red background */
+  background-color: linear-gradient(rgba(164, 41, 41, 0.616),rgba(164, 41, 41, 0.616)); /* Light red background */
 }
 .logo{
     width: 300px;
