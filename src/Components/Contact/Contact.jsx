@@ -30,7 +30,8 @@ const translations = {
     charlesHugot: 'Charles Hugot',
     emmaDupuis: 'Emma Dupuis',
     bookingDate: 'Booking Date:*',
-    submit: 'Submit'
+    submit: 'Submit',
+    confirmationMessage: 'Thank you for your submission!'
   },
   fr: {
     yourName: 'Votre Nom:*',
@@ -60,11 +61,41 @@ const translations = {
     charlesHugot: 'Charles Hugot',
     emmaDupuis: 'Emma Dupuis',
     bookingDate: 'Date de Réservation:*',
-    submit: 'Soumettre'
+    submit: 'Soumettre',
+    confirmationMessage: 'Merci pour votre soumission !'
   }
 };
 
 const Contact = ({ language }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: '',
+    service: '',
+    court: '',
+    team: '',
+    date: ''
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Implement form submission logic here
+    alert(translations[language].confirmationMessage);
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      number: '',
+      service: '',
+      court: '',
+      team: '',
+      date: ''
+    });
+  };
   return (
     <div className="contact">
       <form>
