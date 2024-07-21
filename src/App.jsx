@@ -53,14 +53,26 @@ const App = () => {
       <div className="container">
         <FixedIcon language={language} />
         <Title subtitle={translations[language].subtitle1} title={translations[language].title1} />
-        <Programs language={language} />
-        <About language={language} />
-        <Courtex language={language} />
-        <Gym language={language} />
+        div id="programs">
+          <Programs language={language} />
+        </div>
+        <div id="about">
+          <About language={language} />
+        </div>
+        <div id="courts">
+          <Courtex language={language} />
+        </div>
+        <div id="gym">
+          <Gym language={language} />
+        </div>
         <Title subtitle={translations[language].subtitle2} title={translations[language].title2} />
-        <Connect language={language} />
+        <div id="connect">
+          <Connect language={language} />
+        </div>
         <Title subtitle={translations[language].subtitle3} title={translations[language].title3} />
-        <Contact language={language} />
+        <div id="contact">
+          <Contact language={language} />
+        </div>
       </div>
     </div>
   );
