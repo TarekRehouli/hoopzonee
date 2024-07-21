@@ -59,7 +59,7 @@ const App = () => {
         <div id="home">
           <About language={language} />
         </div>
-        <div >
+        <div>
           <Courtex language={language} />
         </div>
         <div id="gym">
@@ -74,8 +74,10 @@ const App = () => {
           <Contact language={language} />
         </div>
       </div>
+      </div>
   );
 };
+      
 
 export default App;
 
