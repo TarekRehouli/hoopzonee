@@ -48,7 +48,7 @@ const Navbar = ({ language }) => {
         <li><a href="#about">{translations[language].about}</a></li>
         <li><a href="#programs">{translations[language].programs}</a></li>
         <li><a href="#connect">{translations[language].connect}</a></li>
-        <li><button className='btn' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>{translations[language].contact}</button></li>
+        <li><button href="#contact" className='btn' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>{translations[language].contact}</button></li>
       </ul>
     </nav>
   );
