@@ -30,6 +30,8 @@ nav ul li{
 .search-form {
   display: flex;
   align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .search-form input {
@@ -51,4 +53,3 @@ nav ul li{
 .search-form button:hover {
   background-color: darkred;
 }
-
