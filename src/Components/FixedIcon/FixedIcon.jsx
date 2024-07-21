@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import court_img from '../../assets/support-icon.png';
-import LiveChatModal from './LiveChatModal';
+
 
 const FixedIcon = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
