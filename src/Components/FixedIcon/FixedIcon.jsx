@@ -4,6 +4,7 @@ import court_img from '../../assets/support-icon.png';
 import LiveChatModal from './LiveChatModal';
 
 const FixedIcon = () => {
+     const [isModalOpen, setIsModalOpen] = useState(false);
     const imageContainerStyle = {
         position: 'fixed',
         bottom: '20px',
@@ -23,16 +24,27 @@ const FixedIcon = () => {
         objectFit: 'cover',
       };
 
-      return (
-        <div style={imageContainerStyle}>
-          <img
-            src={court_img} // Replace with your image path
-            alt="Fixed Icon"
-            style={imageStyle}
-          />
-        </div>
-      );
-    };
+      const handleClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <>
+      <div style={imageContainerStyle} onClick={handleClick}>
+        <img
+          src={court_img} // Replace with your image path
+          alt="Fixed Icon"
+          style={imageStyle}
+        />
+      </div>
+      <LiveChatModal isOpen={isModalOpen} onClose={handleClose} />
+    </>
+  );
+};
 
 export default FixedIcon;
 
