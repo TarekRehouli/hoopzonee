@@ -45,8 +45,8 @@ const Navbar = ({ language }) => {
     <nav className={navbarClasses.join(' ')}>
       <img src={logo} alt='' className='logo'/>a>
       <ul>
-        <li><a href="#about">{translations[language].about}</a></li>
-        <li><a href="#programs">{translations[language].programs}</a></li>
+        <li><a href="#home">{translations[language].about}</a></li>
+        <li><a href="#courts">{translations[language].programs}</a></li>
         <li><a href="#connect">{translations[language].connect}</a></li>
         <li><button href="#contact" className='btn' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>{translations[language].contact}</button></li>
       </ul>
