@@ -56,13 +56,7 @@ const Navbar = ({ language }) => {
   return (
     <nav className={navbarClasses.join(' ')}>
       <img src={logo} alt='' className='logo'/>a>
-      <ul>
-        <li><a href="#home">{translations[language].about}</a></li>
-        <li><a href="#courts">{translations[language].programs}</a></li>
-        <li><a href="#connect">{translations[language].connect}</a></li>
-       <li><button href="#contact" className='btn' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>{translations[language].contact}</button></li>
-      </ul>
-      <form className="search-form" onSubmit={handleSearchSubmit}>
+       <form className="search-form" onSubmit={handleSearchSubmit}>
         <input
           type="text"
           placeholder={translations[language].searchPlaceholder}
@@ -71,6 +65,12 @@ const Navbar = ({ language }) => {
         />
         <button type="submit">🔍</button>
       </form>
+      <ul>
+        <li><a href="#home">{translations[language].about}</a></li>
+        <li><a href="#courts">{translations[language].programs}</a></li>
+        <li><a href="#connect">{translations[language].connect}</a></li>
+       <li><button href="#contact" className='btn' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>{translations[language].contact}</button></li>
+      </ul>
     </nav>
   );
 }
