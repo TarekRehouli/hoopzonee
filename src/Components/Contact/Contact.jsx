@@ -76,122 +76,47 @@ const Contact = ({ language }) => {
     team: '',
     date: ''
   });
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Display confirmation message
-    alert(translations[language].confirmationMessage);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      number: '',
-      service: '',
-      court: '',
-      team: '',
-      date: ''
-    });
-  };
-
   return (
     <div className="contact">
-      <form onSubmit={handleSubmit}>
+      <form>
         <span>{translations[language].yourName}</span>
-        <input
-          className="box"
-          type="text"
-          name="name"
-          placeholder={translations[language].yourName}
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+        <input className='box' type="text" name="name" placeholder={translations[language].enterYourName} required/>
         <span>{translations[language].yourEmail}</span>
-        <input
-          type="email"
-          name="email"
-          placeholder={translations[language].yourEmail}
-          className="box"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
+        <input type="email" name="email" placeholder={translations[language].enterYourEmail} className="box" required/>
         <span>{translations[language].yourNumber}</span>
-        <input
-          type="number"
-          name="number"
-          placeholder={translations[language].yourNumber}
-          className="box"
-          value={formData.number}
-          onChange={handleChange}
-          required
-        />
+        <input type="number" name="number" placeholder={translations[language].enterYourNumber} className="box" required/>
         <span>{translations[language].request}</span>
-        <select
-          name="service"
-          className="box"
-          value={formData.service}
-          onChange={handleChange}
-          required
-        >
-          <option value="" disabled>
-            {translations[language].request}
-          </option>
-          <option value="schedule-appointment">Professional Club Registration</option>
-          <option value="question-services">Team - 5 Players</option>
-          <option value="question-services">Team - 4 Players</option>
-          <option value="question-services">Team - 3 Players</option>
-          <option value="question-services">Solo - 1 Player</option>
-          <option value="question-services">School Club Registration</option>
-          <option value="other">Other</option>
+        <select name="service" className="box" required>
+          <option value="" disabled selected>{translations[language].selectRegistration}</option>
+          <option value="schedule-appointment">{translations[language].professionalClub}</option>
+          <option value="question-services">{translations[language].team5}</option>
+          <option value="question-services">{translations[language].team4}</option>
+          <option value="question-services">{translations[language].team3}</option>
+          <option value="question-services">{translations[language].solo}</option>
+          <option value="question-services">{translations[language].schoolClub}</option>
+          <option value="other">{translations[language].other}</option>
         </select>
         <span>{translations[language].chooseCourts}</span>
-        <select
-          name="court"
-          className="box"
-          value={formData.court}
-          onChange={handleChange}
-          required
-        >
-          <option value="" disabled>
-            {translations[language].chooseCourts}
-          </option>
-          <option value="general_dentistry">HoopZone Arena - Interior Court</option>
-          <option value="dental-radiography">HoopZone Park - Exterior Court</option>
-          <option value="implantology">HoopZone Gym - Interior Gym</option>
+        <select name="service" className="box" required>
+          <option value="" disabled selected>{translations[language].selectFacility}</option>
+          <option value="general_dentistry">{translations[language].interiorCourt}</option>
+          <option value="dental-radiography">{translations[language].exteriorCourt}</option>
+          <option value="implantology">{translations[language].interiorGym}</option>
         </select>
         <span>{translations[language].joinTeam}</span>
-        <select
-          name="team"
-          className="box"
-          value={formData.team}
-          onChange={handleChange}
-        >
-          <option value="" disabled>
-            {translations[language].joinTeam}
-          </option>
-          <option value="general_dentistry">Julien Leblanc</option>
-          <option value="dental-radiography">Charles Hugot</option>
-          <option value="implantology">Emma Dupuis</option>
+        <select name="service" className="box" required>
+          <option value="" disabled selected>{translations[language].selectTeam}</option>
+          <option value="genera_dentistry">{translations[language].na}</option>
+          <option value="general_dentistry">{translations[language].julienLeblanc}</option>
+          <option value="dental-radiography">{translations[language].charlesHugot}</option>
+          <option value="implantology">{translations[language].emmaDupuis}</option>
         </select>
         <span>{translations[language].bookingDate}</span>
-        <input
-          type="datetime-local"
-          name="date"
-          className="box"
-          value={formData.date}
-          onChange={handleChange}
-        />
-        <button type="submit" className="btn dark-btn">
-          {translations[language].submit}
-        </button>
+        <input type="datetime-local" name="date" className="box"/>
+        <button type="submit" className="btn dark-btn">{translations[language].submit}</button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
