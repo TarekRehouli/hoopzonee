@@ -1,32 +1,67 @@
-nav{
-    width: 100%;
-    /*background: #333;*/
-    color: #fff;
-    padding: 4px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 10;
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  transition: background 0.3s ease;
+  z-index: 999;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .navbar.scrolled {
-  background: linear-gradient(rgba(164, 41, 41, 0.616),rgba(164, 41, 41, 0.616)); /* Light red background */
+  background: linear-gradient(rgba(164, 41, 41, 0.616), rgba(164, 41, 41, 0.616));
 }
-.logo{
-    width: 300px;
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
 }
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 5px 20px;
-    font-size: 16px;
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
-.dark-nav{
-    background: red;
-    transition: 0.5s;
+
+.navbar ul li {
+  display: inline;
 }
+
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  color: red;
+}
+
+.navbar ul li .btn {
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar ul li .btn img {
+  margin-left: 5px;
+}
+
+.navbar ul li .btn:hover {
+  background-color: darkred;
+}
+
 .search-form {
   display: flex;
   align-items: center;
@@ -53,3 +88,4 @@ nav ul li{
 .search-form button:hover {
   background-color: darkred;
 }
+
