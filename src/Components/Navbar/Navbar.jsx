@@ -23,7 +23,7 @@ const translations = {
 const Navbar = ({ language }) => {
   return (
     <nav className="navbar">
-      <a href="#" className="logo">HoopZone</a>
+      <img src={logo} alt='' className='logo'/>
       <ul>
         <li><a href="#programs">{translations[language].programs}</a></li>
         <li><a href="#about">{translations[language].about}</a></li>
