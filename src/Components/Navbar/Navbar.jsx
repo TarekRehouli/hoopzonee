@@ -58,7 +58,7 @@ const Navbar = ({ language }) => {
         <li><a href="#connect">{translations[language].connect}</a></li>
         <li><button href="#contact" className='btn' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>{translations[language].contact}</button></li>
       </ul>
-      <form className="search-form" onSubmit={handleSearchSubmit}>
+      <form className="search-form" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
           placeholder={translations[language].searchPlaceholder}
