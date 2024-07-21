@@ -42,6 +42,7 @@ const App = () => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
   };
+
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
@@ -52,38 +53,35 @@ const App = () => {
         <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '10px' }} onClick={() => handleLanguageChange('en')}>EN</button>
         <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '10px' }} onClick={() => handleLanguageChange('fr')}>FR</button>
       </div>
-      <Navbar language={language} />
-      <div id="home">
-          <Hero language={language} />
-        </div>
+      <Navbar language={language} onSearch={handleSearch} />
+      <Hero language={language} />
       <div className="container">
         <FixedIcon language={language} />
         <Title subtitle={translations[language].subtitle1} title={translations[language].title1} />
+        <div id="programs">
+          <Programs language={language} searchQuery={searchQuery} />
+        </div>
+        <div id="about">
+          <About language={language} searchQuery={searchQuery} />
+        </div>
         <div id="courts">
-          <Programs language={language} />
-        </div>
-        <div>
-          <About language={language} />
-        </div>
-        <div>
-          <Courtex language={language} />
+          <Courtex language={language} searchQuery={searchQuery} />
         </div>
         <div id="gym">
-          <Gym language={language} />
+          <Gym language={language} searchQuery={searchQuery} />
         </div>
         <Title subtitle={translations[language].subtitle2} title={translations[language].title2} />
         <div id="connect">
-          <Connect language={language} />
+          <Connect language={language} searchQuery={searchQuery} />
         </div>
         <Title subtitle={translations[language].subtitle3} title={translations[language].title3} />
         <div id="contact">
-          <Contact language={language} />
+          <Contact language={language} searchQuery={searchQuery} />
         </div>
       </div>
-      </div>
+    </div>
   );
 };
-      
 
 export default App;
 
