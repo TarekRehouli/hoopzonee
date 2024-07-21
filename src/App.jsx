@@ -74,7 +74,6 @@ const App = () => {
           <Contact language={language} />
         </div>
       </div>
-    </div>
   );
 };
 
