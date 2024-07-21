@@ -54,7 +54,9 @@ const App = () => {
         <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '10px' }} onClick={() => handleLanguageChange('fr')}>FR</button>
       </div>
       <Navbar language={language} onSearch={handleSearch} />
-      <Hero language={language} />
+      <div id="home">
+          <Hero language={language}  searchQuery={searchQuery} />
+        </div>
       <div className="container">
         <FixedIcon language={language} />
         <Title subtitle={translations[language].subtitle1} title={translations[language].title1} />
