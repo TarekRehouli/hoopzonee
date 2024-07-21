@@ -1,49 +1,35 @@
-import React from 'react'
-import './Programs.css'
-import court_1 from "../../assets/court_1.jpg"
-import court_2 from "../../assets/court_2.jpg"
-import court_3 from "../../assets/court_3.jpg"
-import court_icon from "../../assets/court_icon.png"
+import React from 'react';
+import './Programs.css';
+import court_1 from '../../assets/court_1.jpg';
+import court_2 from '../../assets/court_2.jpg';
+import court_3 from '../../assets/court_3.jpg';
+import court_icon from '../../assets/court_icon.png';
 
-const translations = {
-  en: {
-    interior: 'Interior Court',
-    exterior: 'Exterior Court',
-    other: 'Other'
-  },
-  fr: {
-    interior: 'Court Intérieur',
-    exterior: 'Court Extérieur',
-    other: 'Autre'
-  }
+const Programs = ({ language, searchQuery }) => {
+  const programs = [
+    { id: 1, title: language === 'en' ? 'Interior Court' : 'Court Intérieur', image: court_1 },
+    { id: 2, title: language === 'en' ? 'Exterior Court' : 'Court Extérieur', image: court_2 },
+    { id: 3, title: language === 'en' ? 'Other' : 'Autre', image: court_3 },
+  ];
+
+  const filteredPrograms = programs.filter(program =>
+    program.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    <div className="programs">
+      {filteredPrograms.map(program => (
+        <div key={program.id} className="program">
+          <img src={program.image} alt="" />
+          <div className="caption">
+            <img src={court_icon} alt="" />
+            <p>{program.title}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 };
 
-const Programs = ({ language }) => {
-  return (
-    <div className='programs'>
-      <div className="program">
-        <img src={court_1} alt="" />
-        <div className="caption">
-          <img src={court_icon} alt="" />
-          <p>{translations[language].interior}</p>
-        </div> 
-      </div> 
-      <div className="program">
-        <img src={court_2} alt="" />
-        <div className="caption">
-          <img src={court_icon} alt="" />
-          <p>{translations[language].exterior}</p>
-        </div>
-      </div> 
-      <div className="program">
-        <img src={court_3} alt="" />
-        <div className="caption">
-          <img src={court_icon} alt="" />
-          <p>{translations[language].other}</p>
-        </div>
-      </div> 
-    </div>
-  )
-}
+export default Programs;
 
-export default Programs
