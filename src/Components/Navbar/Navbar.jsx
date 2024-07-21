@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
+import logo from '../../assets/logo2.png'
 
 const translations = {
   en: {
@@ -25,7 +26,7 @@ const Navbar = ({ language }) => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 50) {
+    if (offset > 200) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -46,7 +47,7 @@ const Navbar = ({ language }) => {
 
   return (
     <nav className={navbarClasses.join(' ')}>
-      <a href="#" className="logo">HoopZone</a>
+      <img src={logo} alt='' className='logo'/>a>
       <ul>
         <li><a href="#programs">{translations[language].programs}</a></li>
         <li><a href="#about">{translations[language].about}</a></li>
