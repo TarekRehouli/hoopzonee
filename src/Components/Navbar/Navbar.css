@@ -11,6 +11,9 @@ nav{
     justify-content: space-between;
     z-index: 10;
 }
+.navbar.scrolled {
+  background-color: #ffcccc; /* Light red background */
+}
 .logo{
     width: 300px;
 }
