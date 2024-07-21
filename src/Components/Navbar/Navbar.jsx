@@ -33,13 +33,9 @@ const Navbar = ({ language }) => {
   };
     const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+    onSearch(e.target.value);
   };
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    // Implement search functionality here
-    console.log('Search query:', searchQuery);
-  };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
