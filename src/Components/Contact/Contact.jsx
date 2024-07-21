@@ -98,7 +98,7 @@ const Contact = ({ language }) => {
   };
   return (
     <div className="contact">
-      <form>
+      <<form onSubmit={handleSubmit}>
         <span>{translations[language].yourName}</span>
         <input className='box' type="text" name="name" placeholder={translations[language].enterYourName} required/>
         <span>{translations[language].yourEmail}</span>
