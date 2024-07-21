@@ -24,7 +24,7 @@ const Hero = ({ language }) => {
         <h3>{translations[language].welcome}</h3>
         <h2>{translations[language].title}</h2>
         <p>{translations[language].description}</p>
-        <button className='btn'>{translations[language].button} <img src={dark_arrow} alt="" /></button>
+        <button href="#contact" className='btn'>{translations[language].button} <img src={dark_arrow} alt="" /></button>
       </div>
     </div>
   )
