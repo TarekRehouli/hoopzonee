@@ -54,11 +54,9 @@ const App = () => {
         <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '10px' }} onClick={() => handleLanguageChange('fr')}>FR</button>
       </div>
       <Navbar language={language} onSearch={handleSearch} />
-      <div id="home">
-          <Hero language={language}  searchQuery={searchQuery} />
-        </div>
+      <Hero language={language} />
       <div className="container">
-        <FixedIcon language={language} />
+        <FixedIcon />
         <Title subtitle={translations[language].subtitle1} title={translations[language].title1} />
         <div id="programs">
           <Programs language={language} searchQuery={searchQuery} />
@@ -86,5 +84,6 @@ const App = () => {
 };
 
 export default App;
+
 
 
