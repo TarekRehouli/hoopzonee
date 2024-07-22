@@ -1,0 +1,23 @@
+.facet-filters-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.facets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.facet {
+  margin: 10px 0;
+}
+
+.facet h4 {
+  margin-bottom: 5px;
+}
+
+.facet label {
+  margin-right: 10px;
+}
