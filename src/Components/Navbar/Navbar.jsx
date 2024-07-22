@@ -21,6 +21,7 @@ const translations = {
 
 const Navbar = ({ language }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -31,7 +32,12 @@ const Navbar = ({ language }) => {
     }
   };
   const handleSearchChange = (e) => {
-    onSearchChange(e.target.value);
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    onSearch(searchQuery);
   };
 
   useEffect(() => {
@@ -45,6 +51,8 @@ const Navbar = ({ language }) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
   };
+
+ 
 
   let navbarClasses = ['navbar'];
   if (scrolled) {
@@ -61,17 +69,23 @@ const Navbar = ({ language }) => {
        <li><button href="#contact" className='btn' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>{translations[language].contact}</button></li>
       </ul>
       <div className="search-container">
+        <form className="search-form" onSubmit={handleSearchSubmit}>
           <input
             type="text"
             placeholder={translations[language].searchPlaceholder}
+            value={searchQuery}
             onChange={handleSearchChange}
           />
+          <button type="submit">🔍</button>
+        </form>
       </div>
     </nav>
   );
 }
 
 export default Navbar;
+
+
 
 
 
