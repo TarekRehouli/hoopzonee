@@ -21,13 +21,7 @@ const translations = {
 
 const Navbar = ({ language }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [value, setValue] = useState('');
-  const onChange = (event) =>{
-    setValue(event.target.value);
-  }
-  const onSearch= (searchTerm) => {
-    console.log('search',searchTerm);
-  }
+
   const handleScroll = () => {
     const offset = window.scrollY;
     if (offset > 75) {
