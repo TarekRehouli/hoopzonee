@@ -6,12 +6,11 @@
 
 .facet {
   margin: 10px 0;
+  text-align: center;
 }
 
 .facet h4 {
   margin-bottom: 5px;
+  text-transform: capitalize;
 }
 
-.facet label {
-  margin-right: 10px;
-}
