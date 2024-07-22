@@ -31,6 +31,14 @@ const Navbar = ({ language }) => {
       setScrolled(false);
     }
   };
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    onSearch(searchQuery);
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -44,9 +52,7 @@ const Navbar = ({ language }) => {
     localStorage.setItem('language', lang);
   };
 
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-  };
+ 
 
   let navbarClasses = ['navbar'];
   if (scrolled) {
