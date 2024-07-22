@@ -57,8 +57,6 @@ const Navbar = ({ language }) => {
           <input
             type="text"
             placeholder={translations[language].searchPlaceholder}
-            value={value}
-            onChange={onChange}
           />
           <button type="submit">🔍</button>
         </form>
