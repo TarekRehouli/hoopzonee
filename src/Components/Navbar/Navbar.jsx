@@ -59,8 +59,6 @@ const Navbar = ({ language }) => {
         <li><a href="#connect">{translations[language].connect}</a></li>
        <li><button href="#contact" className='btn' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>{translations[language].contact}</button></li>
       </ul>
-      <div className="search-container">
-      </div>
     </nav>
   );
 }
