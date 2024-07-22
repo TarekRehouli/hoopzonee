@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import court_img from '../../assets/support-icon.png';
-import './FixedIcon.css'; // Ensure you have this import for styling
+import './FixedIcon.css'; 
 
 const FixedIcon = () => {
   const [showPhoneNumber, setShowPhoneNumber] = useState(false);
@@ -13,12 +13,12 @@ const FixedIcon = () => {
     position: 'fixed',
     bottom: '20px',
     right: '20px',
-    width: '60px', // Adjust the size as needed
-    height: '60px', // Adjust the size as needed
+    width: '60px', 
+    height: '60px',
     borderRadius: '50%',
     overflow: 'hidden',
     backgroundColor: "red",
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)', // Optional: add a shadow
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)', 
     cursor: 'pointer',
   };
 
