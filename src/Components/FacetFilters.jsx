@@ -1,4 +1,5 @@
 import React from 'react';
+import './FacetFilters.css';
 
 const FacetFilters = ({ facets, selectedFacets, onFacetChange }) => {
   const handleChange = (facet, value) => {
