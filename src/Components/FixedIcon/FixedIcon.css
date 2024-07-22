@@ -1,0 +1,18 @@
+.phone-number {
+  position: fixed;
+  bottom: 90px; 
+  right: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.phone-number::before {
+  content: '📞';
+  margin-right: 5px;
+}
