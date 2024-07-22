@@ -66,8 +66,8 @@ const App = () => {
   return (
     <div>
       <div style={{ position: 'fixed', top: '10px', right: '10px', zIndex: '1000', display: 'flex', gap: '5px' }}>
-        <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '8px' }} onClick={() => handleLanguageChange('en')}>EN</button>
-        <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '8px' }} onClick={() => handleLanguageChange('fr')}>FR</button>
+        <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '6px' }} onClick={() => handleLanguageChange('en')}>EN</button>
+        <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '6px' }} onClick={() => handleLanguageChange('fr')}>FR</button>
       </div>
       <Navbar language={language} />
       <div id="home">
