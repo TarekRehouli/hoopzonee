@@ -8,14 +8,14 @@ const translations = {
     programs: 'Courts',
     connect: 'Connect',
     contact: 'Book',
-    searchPlaceholder: 'Search...'
+
   },
   fr: {
     about: 'Acceuil',
     programs: 'Terrains',
     connect: 'Connecter',
     contact: 'Reserver',
-    searchPlaceholder: 'Rechercher...'
+
   }
 };
 
