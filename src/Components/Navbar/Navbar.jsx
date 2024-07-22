@@ -21,7 +21,6 @@ const translations = {
 
 const Navbar = ({ language }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -32,7 +31,7 @@ const Navbar = ({ language }) => {
     }
   };
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+    onSearchChange(e.target.value);
   };
 
   useEffect(() => {
@@ -65,7 +64,6 @@ const Navbar = ({ language }) => {
           <input
             type="text"
             placeholder={translations[language].searchPlaceholder}
-            value={searchQuery}
             onChange={handleSearchChange}
           />
       </div>
