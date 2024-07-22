@@ -66,7 +66,7 @@ const Navbar = ({ language }) => {
             value={value}
             onChange={onChange}
           />
-          <button onClick={()=>onSearch(value)}>🔍</button>
+          <button type="submit">🔍</button>
         </form>
       </div>
     </nav>
