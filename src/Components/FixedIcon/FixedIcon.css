@@ -13,6 +13,6 @@
 }
 
 .phone-number::before {
-  content: '📞';
+  content: 'Connect with Live Support Agent:📞';
   margin-right: 5px;
 }
