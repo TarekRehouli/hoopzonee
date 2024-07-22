@@ -8,6 +8,7 @@ const translations = {
     programs: 'Courts',
     connect: 'Connect',
     contact: 'Book',
+    searchPlaceholder: 'Search...'
 
   },
   fr: {
@@ -15,6 +16,7 @@ const translations = {
     programs: 'Terrains',
     connect: 'Connecter',
     contact: 'Reserver',
+    searchPlaceholder: 'Rechercher...'
 
   }
 };
