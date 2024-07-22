@@ -10,6 +10,7 @@ import Title from './Components/Title/Title';
 import FixedIcon from './Components/FixedIcon/FixedIcon';
 import Contact from './Components/Contact/Contact';
 import FacetFilters from './Components/FacetFilters';
+import './App.css'; 
 
 const translations = {
   en: {
