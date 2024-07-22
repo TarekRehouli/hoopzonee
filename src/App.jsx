@@ -31,7 +31,7 @@ const translations = {
 
   const App = () => {
   const [language, setLanguage] = useState('en');
-  const [searchQuery, setSearchQuery] = useState('');
+
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language') || 'en';
@@ -41,11 +41,6 @@ const translations = {
   const handleLanguageChange = (lang) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
-  };
-
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-    scrollToSection(query);
   };
 
   const scrollToSection = (query) => {
@@ -58,9 +53,12 @@ const translations = {
       contact: 'contact'
     };
 
-    const section = sections[query.toLowerCase()];
-    if (section) {
-      document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+    const sectionId = sectionIds[query.toLowerCase()];
+    if (sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
