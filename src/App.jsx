@@ -43,8 +43,39 @@ const App = () => {
     localStorage.setItem('language', lang);
   };
 
+  const App = () => {
+  const [language, setLanguage] = useState('en');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language') || 'en';
+    setLanguage(savedLanguage);
+  }, []);
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem('language', lang);
+  };
+
   const handleSearch = (query) => {
     setSearchQuery(query);
+    scrollToSection(query);
+  };
+
+  const scrollToSection = (query) => {
+    const sections = {
+      programs: 'programs',
+      about: 'about',
+      courts: 'courts',
+      gym: 'gym',
+      connect: 'connect',
+      contact: 'contact'
+    };
+
+    const section = sections[query.toLowerCase()];
+    if (section) {
+      document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
