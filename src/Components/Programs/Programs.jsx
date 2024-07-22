@@ -22,24 +22,13 @@ const translations = {
   }
 };
 
-const highlightText = (text, query) => {
-  if (!query) return text;
-  const parts = text.split(new RegExp(`(${query})`, 'gi'));
-  return (
-    <>
-      {parts.map((part, index) =>
-        part.toLowerCase() === query.toLowerCase() ? (
-          <span key={index} style={{ backgroundColor: 'yellow' }}>{part}</span>
-        ) : (
-          part
-        )
-      )}
-    </>
-  );
-};
-
 const Programs = ({ language, searchQuery }) => {
   const programs = translations[language].programs;
+
+  const filteredPrograms = programs.filter(program =>
+    program.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    program.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="programs">
@@ -48,8 +37,8 @@ const Programs = ({ language, searchQuery }) => {
           <img src={program.image} alt={program.title} />
           <div className="caption">
             <img src={court_icon} alt="court icon" />
-            <p>{highlightText(program.title, searchQuery)}</p>
-            <p>{highlightText(program.description, searchQuery)}</p>
+            <p>{program.title}</p>
+            <p>{program.description}</p>
           </div>
         </div>
       ))}
