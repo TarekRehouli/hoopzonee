@@ -9,6 +9,7 @@ import Connect from './Components/Connect/Connect';
 import Title from './Components/Title/Title';
 import FixedIcon from './Components/FixedIcon/FixedIcon';
 import Contact from './Components/Contact/Contact';
+import FacetFilters from './Components/FacetFilters';
 
 const translations = {
   en: {
@@ -28,10 +29,24 @@ const translations = {
     title3: 'Réserver Une Réservation'
   }
 };
+const facets = {
+  en: {
+    type: ['Indoor', 'Outdoor', 'Other'],
+    availability: ['Available', 'Occupied']
+  },
+  fr: {
+    type: ['Intérieur', 'Extérieur', 'Autre'],
+    availability: ['Disponible', 'Occupé']
+  }
+};
 
   const App = () => {
   const [language, setLanguage] = useState('en');
   const [searchQuery, setSearchQuery] = useState('');
+    const [selectedFacets, setSelectedFacets] = useState({
+    type: [],
+    availability: []
+  });
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language') || 'en';
@@ -47,22 +62,10 @@ const translations = {
     setSearchQuery(query);
     scrollToSection(query);
   };
-
-  const scrollToSection = (query) => {
-    const sections = {
-      programs: 'programs',
-      about: 'about',
-      courts: 'courts',
-      gym: 'gym',
-      connect: 'connect',
-      contact: 'contact'
-    };
-
-    const section = sections[query.toLowerCase()];
-    if (section) {
-      document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleFacetChange = (newSelectedFacets) => {
+    setSelectedFacets(newSelectedFacets);
   };
+    
 
   return (
     <div>
@@ -70,15 +73,16 @@ const translations = {
         <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '10px' }} onClick={() => handleLanguageChange('en')}>EN</button>
         <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '10px' }} onClick={() => handleLanguageChange('fr')}>FR</button>
       </div>
-      <Navbar language={language} onSearch={handleSearch} />
+      <Navbar language={language} onSearch={handleSearchChange} />
       <div id="home">
           <Hero language={language} searchQuery={searchQuery} />
         </div>
       <div className="container">
         <FixedIcon />
         <Title subtitle={translations[language].subtitle1} title={translations[language].title1} />
+        <FacetFilters facets={facets[language]} selectedFacets={selectedFacets} onFacetChange={handleFacetChange} />
         <div id="programs">
-          <Programs language={language} searchQuery={searchQuery} />
+          <Programs language={language} searchQuery={searchQuery} selectedFacets={selectedFacets} />
         </div>
         <div id="about">
           <About language={language} searchQuery={searchQuery} />
