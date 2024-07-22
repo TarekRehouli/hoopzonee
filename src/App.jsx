@@ -43,10 +43,26 @@ const translations = {
     localStorage.setItem('language', lang);
   };
 
-  const handleSearchChange = (query) => {
+  const handleSearch = (query) => {
     setSearchQuery(query);
+    scrollToSection(query);
   };
 
+  const scrollToSection = (query) => {
+    const sections = {
+      programs: 'programs',
+      about: 'about',
+      courts: 'courts',
+      gym: 'gym',
+      connect: 'connect',
+      contact: 'contact'
+    };
+
+    const section = sections[query.toLowerCase()];
+    if (section) {
+      document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div>
@@ -87,5 +103,4 @@ const translations = {
 };
 
 export default App;
-
 
