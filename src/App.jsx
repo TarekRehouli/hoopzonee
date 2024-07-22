@@ -9,7 +9,7 @@ import Connect from './Components/Connect/Connect';
 import Title from './Components/Title/Title';
 import FixedIcon from './Components/FixedIcon/FixedIcon';
 import Contact from './Components/Contact/Contact';
-import FacetFilters from './Components/FacetFilters';
+import FacetFilters from './Components/FacetFilters/FacetFilters';
 
 const translations = {
   en: {
@@ -29,6 +29,7 @@ const translations = {
     title3: 'Réserver Une Réservation'
   }
 };
+
 const facets = {
   en: {
     type: ['Indoor', 'Outdoor', 'Other'],
@@ -40,10 +41,9 @@ const facets = {
   }
 };
 
-  const App = () => {
+const App = () => {
   const [language, setLanguage] = useState('en');
-  const [searchQuery, setSearchQuery] = useState('');
-    const [selectedFacets, setSelectedFacets] = useState({
+  const [selectedFacets, setSelectedFacets] = useState({
     type: [],
     availability: []
   });
@@ -58,14 +58,9 @@ const facets = {
     localStorage.setItem('language', lang);
   };
 
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-    scrollToSection(query);
-  };
   const handleFacetChange = (newSelectedFacets) => {
     setSelectedFacets(newSelectedFacets);
   };
-    
 
   return (
     <div>
@@ -73,33 +68,31 @@ const facets = {
         <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '10px' }} onClick={() => handleLanguageChange('en')}>EN</button>
         <button style={{ padding: '2px 5px', cursor: 'pointer', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '3px', fontSize: '10px' }} onClick={() => handleLanguageChange('fr')}>FR</button>
       </div>
-      <Navbar language={language} onSearch={handleSearchChange} />
-      <div id="home">
-          <Hero language={language} searchQuery={searchQuery} />
-        </div>
+      <Navbar language={language} />
+      <Hero language={language} />
       <div className="container">
         <FixedIcon />
         <Title subtitle={translations[language].subtitle1} title={translations[language].title1} />
         <FacetFilters facets={facets[language]} selectedFacets={selectedFacets} onFacetChange={handleFacetChange} />
         <div id="programs">
-          <Programs language={language} searchQuery={searchQuery} selectedFacets={selectedFacets} />
+          <Programs language={language} selectedFacets={selectedFacets} />
         </div>
         <div id="about">
-          <About language={language} searchQuery={searchQuery} />
+          <About language={language} />
         </div>
         <div id="courts">
-          <Courtex language={language} searchQuery={searchQuery} />
+          <Courtex language={language} />
         </div>
         <div id="gym">
-          <Gym language={language} searchQuery={searchQuery} />
+          <Gym language={language} />
         </div>
         <Title subtitle={translations[language].subtitle2} title={translations[language].title2} />
         <div id="connect">
-          <Connect language={language} searchQuery={searchQuery} />
+          <Connect language={language} />
         </div>
         <Title subtitle={translations[language].subtitle3} title={translations[language].title3} />
         <div id="contact">
-          <Contact language={language} searchQuery={searchQuery} />
+          <Contact language={language} />
         </div>
       </div>
     </div>
@@ -107,4 +100,5 @@ const facets = {
 };
 
 export default App;
+
 
