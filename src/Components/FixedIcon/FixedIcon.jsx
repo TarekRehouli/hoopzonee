@@ -39,7 +39,7 @@ const FixedIcon = () => {
       </div>
       {showPhoneNumber && (
         <div className="phone-number">
-          📞 +123456789
+          <a href="tel:+123456789">📞 +123456789</a>
         </div>
       )}
     </div>
@@ -47,3 +47,4 @@ const FixedIcon = () => {
 };
 
 export default FixedIcon;
+
