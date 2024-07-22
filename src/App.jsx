@@ -9,7 +9,7 @@ import Connect from './Components/Connect/Connect';
 import Title from './Components/Title/Title';
 import FixedIcon from './Components/FixedIcon/FixedIcon';
 import Contact from './Components/Contact/Contact';
-import FacetFilters from './Components/FacetFilters;
+import FacetFilters from './Components/FacetFilters';
 
 const translations = {
   en: {
