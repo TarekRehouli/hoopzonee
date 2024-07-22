@@ -43,29 +43,10 @@ const translations = {
     localStorage.setItem('language', lang);
   };
 
-  const handleSearch = (query) => {
+  const handleSearchChange = (query) => {
     setSearchQuery(query);
-    scrollToSection(query);
   };
 
-  const scrollToSection = (query) => {
-    const sections = {
-      programs: 'programs',
-      about: 'about',
-      courts: 'courts',
-      gym: 'gym',
-      connect: 'connect',
-      contact: 'contact'
-    };
-
-    const sectionId = sectionIds[query.toLowerCase()];
-    if (sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
 
   return (
     <div>
