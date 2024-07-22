@@ -33,3 +33,4 @@ const FacetFilters = ({ facets, selectedFacets, onFacetChange }) => {
 };
 
 export default FacetFilters;
+
